@@ -14,6 +14,9 @@ custom_iron:
             # If item is not set, the block will always drop.
             item:
             - stone_pickaxe
+            - iron_pickaxe
+            - gold_pickaxe
+            - diamond_pickaxe
     # The material property, sets the blocks material. If the item does not have custom_model_data applied, it will show
     # the material instead. The block will have the behavior of the material specified.
     material: stone
