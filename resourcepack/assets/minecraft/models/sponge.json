@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/sponge",
+  "overrides": [
+    { "predicate": { "custom_model_data": 2}, "model": "item/custom/lasagna" }
+  ]
+}
