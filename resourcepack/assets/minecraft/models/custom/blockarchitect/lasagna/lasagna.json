@@ -1,8 +1,8 @@
 {
     "parent": "minecraft:block/cube_all",
     "textures": {
-        "0": "custom/lasagna",
-        "particle": "custom/lasagna"
+        "0": "custom/blockarchitect/lasagna/lasagna",
+        "particle": "custom/blockarchitect/lasagna/lasagna"
     },
     "elements": [
         {
