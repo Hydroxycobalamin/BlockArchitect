@@ -8,7 +8,7 @@ BlockArchitect_handler:
         - define location <context.location>
         - if <[location].chunk.entities[custom_block].size> > <static[<script[BlockArchitect_handler].data_key[data.max-blocks-per-chunk]>]>:
             - determine cancelled
-        - inject BlockArchitect_create_custom_block
+        - run BlockArchitect_create_custom_block def.location:<[location]> def.item:<player.item_in_hand>
         on player breaks block location_flagged:custom_block:
         - define script <context.location.flag[custom_block.entity].item.script>
         - define data <[script].parsed_key[data.custom_block].if_null[null]>
@@ -34,24 +34,6 @@ BA_match_item:
         - if <player.item_in_hand> matches <[matcher]>:
             - determine <[data.drops].if_null[<[script].name.as[item]>]>
     - determine nothing
-BlockArchitect_create_custom_block:
-    type: task
-    debug: false
-    definitions: location
-    script:
-    - define data <script[BlockArchitect_custom_block].data_key[mechanisms.display_entity_data]>
-    - spawn BlockArchitect_custom_block[item=<player.item_in_hand.with[quantity=1]>;display_entity_data=<[data].include[brightness_sky=<[location].light.sky>;brightness_block=<[location].light.blocks>]>] <[location].center> save:custom
-    - flag <[location]> custom_block.entity:<entry[custom].spawned_entity>
-    - flag <[location]> custom_block.flood_fill:<[location].flood_fill[1].types[block]>
-    - flag <[location].world> custom_blocks:->:<[location]>
-BlockArchitect_remove_custom_block:
-    type: task
-    debug: false
-    definitions: location
-    script:
-    - remove <[location].flag[custom_block.entity]>
-    - flag <[location]> custom_block:!
-    - flag <[location].world> custom_blocks:<-:<[location]>
 BlockArchitect_light_engine:
     type: world
     debug: false
