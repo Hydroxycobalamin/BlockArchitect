@@ -6,7 +6,7 @@ BA_item_is_valid:
     - if !<[item].as[item].exists>:
         - debug error "<&[error]>'<[item].if_null[null].custom_color[emphasis]>' is not a valid item. Is it a valid script item?"
         - determine false
-    - if <[item].has_flag[custom_block]>:
+    - if !<[item].has_flag[custom_block]>:
         - debug error "<&[error]>'<[item].custom_color[emphasis]> does not have required flag '<&[emphasis]>custom_block<&[error]>'."
         - determine false
     - determine true
