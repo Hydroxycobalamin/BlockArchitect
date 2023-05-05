@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/redstone_lamp",
+    "overrides": [
+        { "predicate": { "custom_model_data": 3}, "model": "custom/blockarchitect/speaker/speaker" }
+    ]
+}
