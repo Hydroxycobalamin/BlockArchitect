@@ -12,6 +12,8 @@ BlockArchitect_event_handler:
             switched: <context.location.switched>
             blockarchitect_id: <context.location.flag[custom_block.entity].item.script.name>
         - inject blockarchitect_custom_event_handler
+        - wait 1t
+        - run BlockArchitect_reapply_light_range def.location:<context.location> def.range:10
 BlockArchitect_custom_event_handler:
     type: task
     debug: false

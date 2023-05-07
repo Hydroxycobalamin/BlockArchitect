@@ -61,8 +61,7 @@ BlockArchitect_light_engine:
                 - inject BlockArchitect_reapply_light_time
         - debug log "Updated <[entities]> entities in <queue.time_ran.in_milliseconds>ms (avg:<queue.time_ran.in_milliseconds.div[<[entities]>].round_to[2]>ms)"
         after player places block:
-        - define location <context.location>
-        - run BlockArchitect_reapply_light_range def.location:<[location]> def.range:10
+        - run BlockArchitect_reapply_light_range def.location:<context.location> def.range:10
         after player breaks block:
         - run BlockArchitect_reapply_light_range def.location:<context.location> def.range:10
 BlockArchitect_reapply_light_time:
