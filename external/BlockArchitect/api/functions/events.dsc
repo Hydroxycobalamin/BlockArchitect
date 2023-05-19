@@ -2,6 +2,26 @@ BlockArchitect_event_handler:
     type: world
     debug: false
     events:
+        ## <--[event]
+        ## @Events
+        ## blockarchitect_block_switched
+        ##
+        ## @Group Block
+        ##
+        ## @Location true
+        ##
+        ## @Warning This event may fire very rapidly
+        ##
+        ## @Switch blockarchitect_id:<id> to only process the event if the block is a specific BlockArchitect block.
+        ##
+        ## @Triggers when a BlockArchitect block switches.
+        ##
+        ## @Context
+        ## <context.location> returns a LocationTag of the block the physics is affecting.
+        ## <context.switched> returns whether the block was switched or not.
+        ## <context.blockarchitect_id> returns the BlockArchitectID of the block that was switched.
+        ##
+        ## -->
         after block physics location_flagged:custom_block:
         - ratelimit <context.location>/<context.location.switched> 1t
         - if !<context.location.material.supports[switched]>:
