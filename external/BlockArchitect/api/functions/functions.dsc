@@ -1,3 +1,10 @@
+## <--[procedure]
+## @object LocationTag
+## @name BlockArchitect_remove_custom_block
+## @input LocationTag|ItemTag
+## @description
+## Creates a custom block at the location provided.
+## -->
 BlockArchitect_create_custom_block:
     type: task
     debug: false
