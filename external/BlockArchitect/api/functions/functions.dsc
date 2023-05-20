@@ -3,7 +3,7 @@
 ## @input `location`: <LocationTag>| `item`: ItemTag
 ## @description
 ## Creates a custom block at the location provided.
-## @Example
+## @Usage
 ## Use to create a custom block at the players cursor.
 ## - run BlockArchitect_create_custom_block def.location:<player.cursor_on> def.item:custom_lasagna
 ## -->
