@@ -1,9 +1,11 @@
-## <--[procedure]
-## @object LocationTag
+## <--[task]
 ## @name BlockArchitect_remove_custom_block
-## @input LocationTag|ItemTag
+## @input `location`: <LocationTag>| `item`: ItemTag
 ## @description
 ## Creates a custom block at the location provided.
+## @Example
+## Use to create a custom block at the players cursor.
+## - run BlockArchitect_create_custom_block def.location:<player.cursor_on> def.item:custom_lasagna
 ## -->
 BlockArchitect_create_custom_block:
     type: task
