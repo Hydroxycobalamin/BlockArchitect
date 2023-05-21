@@ -6,7 +6,7 @@ BlockArchitect_event_handler:
         ## @Events
         ## blockarchitect_block_switched
         ##
-        ## @Group BlockArchitect
+        ## @Group Blocks
         ##
         ## @Location true
         ##

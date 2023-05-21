@@ -1,6 +1,5 @@
 ## <--[task]
 ## @name BlockArchitect_create_custom_block
-## @Group BlockArchitect
 ## @input location:<LocationTag> item:ItemTag
 ## @description
 ## Creates a custom block at the location provided.
@@ -26,7 +25,6 @@ BlockArchitect_create_custom_block:
     - flag <[location].world> custom_blocks:->:<[location]>
 ## <--[task]
 ## @name BlockArchitect_remove_custom_block
-## @Group BlockArchitect
 ## @input location:<LocationTag>
 ## @description
 ## Creates a custom block at the location provided. Note: This does not remove the block itself.
