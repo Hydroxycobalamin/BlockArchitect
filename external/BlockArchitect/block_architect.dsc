@@ -109,6 +109,7 @@ BlockArchitect_custom_block:
         height: 0
         interpolation_delay: 0s
         interpolation_duration: 0s
+## <--[script]
 ## @name BlockArchitect
 ## @group LargeScripts
 ## @description
