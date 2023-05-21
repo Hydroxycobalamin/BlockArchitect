@@ -6,7 +6,7 @@ BlockArchitect_event_handler:
         ## @Events
         ## blockarchitect_block_switched
         ##
-        ## @Group Block
+        ## @Group BlockArchitect
         ##
         ## @Location true
         ##
@@ -22,7 +22,7 @@ BlockArchitect_event_handler:
         ## <context.blockarchitect_id> returns the BlockArchitectID of the block that was switched.
         ##
         ## @Example
-        ## Use to fire the event only if a custom_speaker was placed.
+        ## # Use to fire the event only if a custom_speaker was placed.
         ## after custom event id:blockarchitect_block_switched data:blockarchitect_id:custom_speaker:
         ## - announce "A <context.blockarchitect_id> was triggered!"
         ##
