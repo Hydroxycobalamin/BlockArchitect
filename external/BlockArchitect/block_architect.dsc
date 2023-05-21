@@ -108,7 +108,8 @@ BlockArchitect_custom_block:
         width: 0
         height: 0
         interpolation_delay: 0s
-        interpolation_duration: 0s## @name BlockArchitect
+        interpolation_duration: 0s
+## @name BlockArchitect
 ## @group LargeScripts
 ## @description
 ## BlockArchitect is an engine to help you create custom blocks with Denizen.
