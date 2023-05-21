@@ -1,6 +1,6 @@
 ## <--[task]
-## @name BlockArchitect_remove_custom_block
-## @input `location`: <LocationTag>| `item`: ItemTag
+## @name BlockArchitect_create_custom_block
+## @input location:<LocationTag> item:ItemTag
 ## @description
 ## Creates a custom block at the location provided.
 ## @Usage
@@ -22,6 +22,16 @@ BlockArchitect_create_custom_block:
     - flag <[location]> custom_block.entity:<entry[custom].spawned_entity>
     - flag <[location]> custom_block.flood_fill:<[location].flood_fill[1].types[block]>
     - flag <[location].world> custom_blocks:->:<[location]>
+## <--[task]
+## @name BlockArchitect_remove_custom_block
+## @input location:<LocationTag>
+## @description
+## Creates a custom block at the location provided.
+## @Usage
+## Use to remove custom block data above the players cursor.
+## Note: This does not remove the block itself.
+## - run BlockArchitect_remove_custom_block def.location:<player.cursor_on.above>
+## -->
 BlockArchitect_remove_custom_block:
     type: task
     debug: false

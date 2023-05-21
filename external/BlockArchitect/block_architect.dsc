@@ -108,4 +108,15 @@ BlockArchitect_custom_block:
         width: 0
         height: 0
         interpolation_delay: 0s
-        interpolation_duration: 0s
+        interpolation_duration: 0s## @name BlockArchitect
+## @group LargeScripts
+## @description
+## BlockArchitect is an engine to help you create custom blocks with Denizen.
+## Custom Blocks may have custom or vanilla behavior. It doesn't spawn blocks automatically into your world. Though, blocks can be spawned via <@link task BlockArchitect_create_custom_block>
+## BlockArchitect allows to create custom blocks with custom or vanilla behavior. It does not spawn them automatically into your world.
+##
+## Please report any issue you've come up with.
+##
+## @Warning This script is work in progress, breaking changes might happen.
+##
+## -->
