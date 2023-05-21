@@ -4,8 +4,9 @@
 ## @description
 ## Creates a custom block at the location provided.
 ## @Usage
-## Use to create a custom block at the players cursor.
+## # Use to create a custom block at the players cursor.
 ## - run BlockArchitect_create_custom_block def.location:<player.cursor_on> def.item:custom_lasagna
+## @Script BlockArchitect
 ## -->
 BlockArchitect_create_custom_block:
     type: task
@@ -31,6 +32,7 @@ BlockArchitect_create_custom_block:
 ## Use to remove custom block data above the players cursor.
 ## Note: This does not remove the block itself.
 ## - run BlockArchitect_remove_custom_block def.location:<player.cursor_on.above>
+## @Script BlockArchitect
 ## -->
 BlockArchitect_remove_custom_block:
     type: task

@@ -25,6 +25,9 @@ BlockArchitect_event_handler:
         ## Use to fire the event only if a custom_speaker was placed.
         ## after custom event id:blockarchitect_block_switched data:blockarchitect_id:custom_speaker:
         ## - announce "A <context.blockarchitect_id> was triggered!"
+        ##
+        ## @Script BlockArchitect
+        ##
         ## -->
         after block physics location_flagged:custom_block:
         - ratelimit <context.location>/<context.location.switched> 1t
