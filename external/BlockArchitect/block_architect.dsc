@@ -76,10 +76,10 @@ BlockArchitect_reapply_light_time:
     - else:
         - define block_light <[block_light].sum.div[<[block_light].size>]>
     - define sky_light <[blocks].parse[light.sky].highest.max[<[blocks].parse[light].highest>]>
-    - define data <[entity].display_entity_data>
-    - if <[data.brightness_sky]> == <[sky_light]> && <[data.brightness_block]> == <[block_light]>:
+    - define data <[entity].brightness>
+    - if <[data.sky]> == <[sky_light]> && <[data.block]> == <[block_light]>:
         - foreach next
-    - adjust <[entity]> display_entity_data:<[data].include[brightness_sky=<[sky_light]>;brightness_block=<[block_light]>]>
+    - adjust <[entity]> brightness:<map[sky=<[sky_light]>;block=<[block_light]>]>
 BlockArchitect_reapply_light_range:
     type: task
     definitions: location|range
@@ -95,20 +95,11 @@ BlockArchitect_custom_block:
   entity_type: item_display
   mechanisms:
     item: dirt
-    display_entity_data:
-        transformation_scale: 1.001,1.001,1.001
-        transformation_left_rotation: 0|0|0|1
-        transformation_right_rotation: 0|0|0|1
-        transformation_translation: 0,0,0
-        view_range: 300
-        brightness_block: 15
-        brightness_sky: 15
-        # These values are needed to use entry tags.
-        item_transform: NONE
-        width: 0
-        height: 0
-        interpolation_delay: 0s
-        interpolation_duration: 0s
+    scale: 1.001,1.001,1.001
+    view_range: 300
+    brightness:
+        block: 15
+        sky: 15
 ## <--[script]
 ## @name BlockArchitect
 ## @group LargeScripts
