@@ -31,3 +31,11 @@ BlockArchitect_cake_handler:
         - adjust <[entity]> item:<[entity].item.with[custom_model_data=<[custom_model_data]>]>
         after generic game event type:BLOCK_DESTROY location_flagged:custom_block:
         - run BlockArchitect_remove_custom_block def.location:<context.location>
+BA_is_cake:
+    type: procedure
+    debug: false
+    definitions: material
+    script:
+    - if <[material].name> == cake:
+        - determine true
+    - determine false

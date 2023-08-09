@@ -8,7 +8,7 @@ BlockArchitect_handler:
         - define location <context.location>
         - if <[location].chunk.entities[custom_block].size> > <static[<script[BlockArchitect_handler].data_key[data.max-blocks-per-chunk]>]>:
             - determine cancelled
-        - run BlockArchitect_create_custom_block def.location:<[location]> def.item:<player.item_in_hand>
+        - inject BlockArchitect_create_custom_block
         on player breaks block location_flagged:custom_block:
         - define script <context.location.flag[custom_block.entity].item.script>
         - define data <[script].parsed_key[data.custom_block].if_null[null]>
@@ -87,7 +87,7 @@ BlockArchitect_reapply_light_range:
     script:
     - define entities <[location].find_blocks_flagged[custom_block].within[<[range]>].parse[flag[custom_block.entity]]>
     - foreach <[entities]> as:entity:
-        - define location <[entity].location>
+        - define location <[entity].flag[custom_block.location].if_null[<[entity].location>]>
         - inject BlockArchitect_reapply_light_time
 BlockArchitect_custom_block:
   type: entity
