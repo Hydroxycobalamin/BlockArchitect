@@ -17,12 +17,11 @@ BlockArchitect_create_custom_block:
         - stop
     - if !<[location].proc[BA_location_is_valid]>:
         - stop
-    - define data <script[BlockArchitect_custom_block].data_key[mechanisms.display_entity_data]>
     - if <[item].material.name> == cake:
         - define spawn_location <[location].center.with_yaw[270]>
     - else:
         - define spawn_location <[location].center>
-    - spawn BlockArchitect_custom_block[item=<[item].with[quantity=1]>;display_entity_data=<[data].include[brightness_sky=<[location].light.sky>;brightness_block=<[location].light.blocks>]>] <[spawn_location]> save:custom
+    - spawn BlockArchitect_custom_block[item=<[item].with[quantity=1]>;brightness[sky=<[location].light.sky>;block=<[location].light.blocks>] <[spawn_location]> save:custom
     - modifyblock <[location]> <[item].material>
     - flag <[location]> custom_block.entity:<entry[custom].spawned_entity>
     - flag <[location]> custom_block.flood_fill:<[location].flood_fill[1].types[block]>
@@ -49,3 +48,14 @@ BlockArchitect_remove_custom_block:
     - remove <[location].flag[custom_block.entity]>
     - flag <[location]> custom_block:!
     - flag <[location].world> custom_blocks:<-:<[location]>
+grass_slab:
+    type: item
+    debug: false
+    data:
+        custom_block:
+            drops: nothing
+    material: stone_slab
+    mechanisms:
+        custom_model_data: 10
+    flags:
+        custom_block: true
