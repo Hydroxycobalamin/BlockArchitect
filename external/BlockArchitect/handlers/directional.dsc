@@ -32,7 +32,6 @@ BA_place_directional:
         brightness:
             sky: <[location].above.light.sky>
             block: <[location].above.light.blocks>
-    - narrate <[location].material>
     - spawn BlockArchitect_custom_block[item=<[item].with[quantity=1]>;brightness=[sky=<[location].light.sky>;block=<[location].light.blocks>] <[spawn_location].with_yaw[<[location].material.proc[BA_get_direction]>]> save:custom
     - flag <[location]> custom_block.entity:<entry[custom].spawned_entity>
     - flag <[location]> custom_block.flood_fill:<[location].flood_fill[1].types[block]>

@@ -59,10 +59,10 @@ BlockArchitect_event_handler:
         ## <context.item> returns the ItemTag the player is clicking with.
         ## <context.location> returns a LocationTag of the block the physics is affecting.
         ## <context.hand> returns an ElementTag of the used hand.
-        ## <context.blockarchitect_id> returns the BlockArchitectID of the block that was switched.
+        ## <context.blockarchitect_id> returns the BlockArchitectID of the block that was clicked.
         ##
         ## @Example
-        ## # Use to fire the event only if a custom_speaker was placed.
+        ## # Use to open a different inventory when a custom_furnace was right clicked.
         ## on custom event id:blockarchitect_block_clicked data:blockarchitect_id:custom_furnace:
         ## - inventory open destination:my_custom_inventory
         ## - determine cancelled
