@@ -41,6 +41,43 @@ BlockArchitect_event_handler:
         - inject blockarchitect_custom_event_handler
         - wait 1t
         - run BlockArchitect_reapply_light_range def.location:<context.location> def.range:10
+        ## <--[event]
+        ## @Events
+        ## blockarchitect_block_clicked
+        ##
+        ## @Group Player
+        ##
+        ## @Location true
+        ##
+        ## @Cancellable true
+        ##
+        ## @Switch blockarchitect_id:<id> to only process the event if the block is a specific BlockArchitect block.
+        ##
+        ## @Triggers when a player right clicks a BlockArchitect block.
+        ##
+        ## @Context
+        ## <context.item> returns the ItemTag the player is clicking with.
+        ## <context.location> returns a LocationTag of the block the physics is affecting.
+        ## <context.hand> returns an ElementTag of the used hand.
+        ## <context.blockarchitect_id> returns the BlockArchitectID of the block that was switched.
+        ##
+        ## @Example
+        ## # Use to fire the event only if a custom_speaker was placed.
+        ## on custom event id:blockarchitect_block_clicked data:blockarchitect_id:custom_furnace:
+        ## - inventory open destination:my_custom_inventory
+        ## - determine cancelled
+        ##
+        ## @Script BlockArchitect
+        ##
+        ## -->
+        on player right clicks block location_flagged:custom_block:
+        - define name blockarchitect_block_clicked
+        - definemap context:
+            item: <context.item>
+            location: <context.location>
+            hand: <context.hand>
+            blockarchitect_id: <context.location.flag[custom_block.entity].item.script.name>
+        - inject blockarchitect_custom_event_handler
 BlockArchitect_custom_event_handler:
     type: task
     debug: false

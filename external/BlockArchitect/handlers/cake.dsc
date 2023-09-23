@@ -29,6 +29,7 @@ BlockArchitect_cake_handler:
             - run BlockArchitect_remove_custom_block def.location:<context.location>
             - stop
         - adjust <[entity]> item:<[entity].item.with[custom_model_data=<[custom_model_data]>]>
+        # Global handler
         after generic game event type:BLOCK_DESTROY location_flagged:custom_block:
         - run BlockArchitect_remove_custom_block def.location:<context.location>
 BA_is_cake:
