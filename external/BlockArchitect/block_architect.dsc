@@ -64,6 +64,8 @@ BlockArchitect_light_engine:
         - run BlockArchitect_reapply_light_range def.location:<context.location> def.range:10
         after player breaks block:
         - run BlockArchitect_reapply_light_range def.location:<context.location> def.range:10
+        after furnace starts smelting item location_flagged:custom_block:
+        - run BlockArchitect_reapply_light_range def.location:<context.location> def.range:10
 BlockArchitect_reapply_light_time:
     type: task
     definitions: entity
@@ -74,7 +76,7 @@ BlockArchitect_reapply_light_time:
     - if <[block_light].is_empty>:
         - define block_light 0
     - else:
-        - define block_light <[block_light].sum.div[<[block_light].size>]>
+        - define block_light <[block_light].sum.div[<[block_light].size>].round>
     - define sky_light <[blocks].parse[light.sky].highest.max[<[blocks].parse[light].highest>]>
     - define data <[entity].brightness>
     - if <[data.sky]> == <[sky_light]> && <[data.block]> == <[block_light]>:

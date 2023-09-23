@@ -4,7 +4,7 @@
 ## @description
 ## Creates a custom block at the location provided.
 ## @Usage
-## Use to create a custom block at the players cursor.
+## # Use to create a custom block at the players cursor.
 ## - run BlockArchitect_create_custom_block def.location:<player.cursor_on> def.item:custom_lasagna
 ## @Script BlockArchitect
 ## -->
@@ -26,6 +26,8 @@ BlockArchitect_create_custom_block:
     # Slab support
     - else if <[item].material.proc[BA_is_slab]>:
         - inject BA_place_slab
+    - else if <[item].material.proc[BA_is_directional]>:
+        - inject BA_place_directional
     - spawn BlockArchitect_custom_block[item=<[item].with[quantity=1]>;brightness=[sky=<[location].light.sky>;block=<[location].light.blocks>] <[spawn_location]> save:custom
     - modifyblock <[location]> <[item].material>
     - flag <[location]> custom_block.entity:<entry[custom].spawned_entity>
@@ -39,7 +41,7 @@ BlockArchitect_create_custom_block:
 ## @description
 ## Creates a custom block at the location provided. Note: This does not remove the block itself.
 ## @Usage
-## Use to remove custom block data above the players cursor.
+## # Use to remove custom block data above the players cursor.
 ## - run BlockArchitect_remove_custom_block def.location:<player.cursor_on.above>
 ## @Script BlockArchitect
 ## -->
