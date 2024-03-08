@@ -74,7 +74,7 @@ BlockArchitect_reapply_light_time:
     - if <[block_light].is_empty>:
         - define block_light 0
     - else:
-        - define block_light <[block_light].sum.div[<[block_light].size>]>
+        - define block_light <[block_light].sum.div[<[block_light].size>].round>
     - define sky_light <[blocks].parse[light.sky].highest.max[<[blocks].parse[light].highest>]>
     - define data <[entity].brightness>
     - if <[data.sky]> == <[sky_light]> && <[data.block]> == <[block_light]>:
