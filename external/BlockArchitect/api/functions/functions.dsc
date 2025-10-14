@@ -17,6 +17,7 @@ BlockArchitect_create_custom_block:
         - stop
     - if !<[location].proc[BA_location_is_valid]>:
         - stop
+    - define item <[item].as[item]>
     # Default
     - define spawn_location <[location].center>
     # Cake support
