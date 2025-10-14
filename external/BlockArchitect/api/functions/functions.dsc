@@ -13,7 +13,6 @@ BlockArchitect_create_custom_block:
     debug: false
     definitions: location|item
     script:
-    - define item <player.item_in_hand>
     - if !<[item].proc[BA_item_is_valid]>:
         - stop
     - if !<[location].proc[BA_location_is_valid]>:
@@ -39,7 +38,7 @@ BlockArchitect_create_custom_block:
 ## @name BlockArchitect_remove_custom_block
 ## @input location:<LocationTag>
 ## @description
-## Creates a custom block at the location provided. Note: This does not remove the block itself.
+## Removes a custom block at the location provided. Note: This does not remove the block itself.
 ## @Usage
 ## # Use to remove custom block data above the players cursor.
 ## - run BlockArchitect_remove_custom_block def.location:<player.cursor_on.above>
