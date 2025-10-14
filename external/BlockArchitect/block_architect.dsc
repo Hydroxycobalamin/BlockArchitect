@@ -8,7 +8,7 @@ BlockArchitect_handler:
         - define location <context.location>
         - if <[location].chunk.entities[custom_block].size> > <static[<script[BlockArchitect_handler].data_key[data.max-blocks-per-chunk]>]>:
             - determine cancelled
-        - run BlockArchitect_create_custom_block def.location:<context.location> def.item:<context.item>
+        - run BlockArchitect_create_custom_block def.location:<context.location> def.item:<context.item_in_hand>
         on player breaks block location_flagged:custom_block:
         - define script <context.location.flag[custom_block.entity].item.script>
         - define data <[script].parsed_key[data.custom_block].if_null[null]>
